@@ -18,7 +18,9 @@ namespace CargoBookingKata.AcceptanceTests
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Cargo Bookings", SourceFile="CargoBooking.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("Cargo Bookings", Description="Cargos are booked to Vessels in order to be transported. \r\nEach booking much have" +
+        " a booking confirmation number.\r\nVessel should not accept cargos if there is no " +
+        "capacity.", SourceFile="CargoBooking.feature", SourceLine=0)]
     public partial class CargoBookingsFeature
     {
         
@@ -31,7 +33,9 @@ namespace CargoBookingKata.AcceptanceTests
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Cargo Bookings", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Cargo Bookings", "Cargos are booked to Vessels in order to be transported. \r\nEach booking much have" +
+                    " a booking confirmation number.\r\nVessel should not accept cargos if there is no " +
+                    "capacity.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -64,54 +68,56 @@ namespace CargoBookingKata.AcceptanceTests
         
         public virtual void FeatureBackground()
         {
-#line 2
+#line 6
+#line 7
+ testRunner.Given("CargoBookings exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Cargos must be added to Vessels in order to be transported. Vessel should accept " +
-            "cargos if there is capacity.", new string[] {
-                "BookCargo"}, SourceLine=4)]
-        public virtual void CargosMustBeAddedToVesselsInOrderToBeTransported_VesselShouldAcceptCargosIfThereIsCapacity_()
+        [TechTalk.SpecRun.ScenarioAttribute("Vessel should accept cargos only if there is capacity.", new string[] {
+                "BookCargo"}, SourceLine=9)]
+        public virtual void VesselShouldAcceptCargosOnlyIfThereIsCapacity_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cargos must be added to Vessels in order to be transported. Vessel should accept " +
-                    "cargos if there is capacity.", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Vessel should accept cargos only if there is capacity.", new string[] {
                         "BookCargo"});
-#line 5
-this.ScenarioSetup(scenarioInfo);
-#line 2
-this.FeatureBackground();
-#line 6
- testRunner.Given("a cargo size is 550 cubic feet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
- testRunner.And("a vessel capacity is 9800 cubic feet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
- testRunner.When("the application try to book the cargo on vessel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
- testRunner.Then("the cargo gets the booking number 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
- testRunner.And("the vessel capacity is 9250 cubic feet.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 11
+ testRunner.Given("a cargo size is 550 cubic feets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
+ testRunner.And("a vessel capacity is 9800 cubic feets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.When("the application tries to book the cargo on vessel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.Then("a new booking is created with the confirmation number 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+ testRunner.And("the cargo is added to the vessel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And("the vessel new capacity is 9250 cubic feets.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Cargos must be rejected if the Vessel does not have enough capacity.", new string[] {
-                "RejectCargo"}, SourceLine=12)]
-        public virtual void CargosMustBeRejectedIfTheVesselDoesNotHaveEnoughCapacity_()
+        [TechTalk.SpecRun.ScenarioAttribute("Cargos should be rejected if the Vessel does not have enough capacity.", new string[] {
+                "RejectCargo"}, SourceLine=18)]
+        public virtual void CargosShouldBeRejectedIfTheVesselDoesNotHaveEnoughCapacity_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cargos must be rejected if the Vessel does not have enough capacity.", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cargos should be rejected if the Vessel does not have enough capacity.", new string[] {
                         "RejectCargo"});
-#line 13
+#line 19
 this.ScenarioSetup(scenarioInfo);
-#line 2
+#line 6
 this.FeatureBackground();
-#line 14
- testRunner.Given("a cargo size is 550 cubic feet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 15
- testRunner.And("a vessel capacity is 120 cubic feet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
- testRunner.When("the application try to book the cargo on vessel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
- testRunner.Then("the cargo is rejected.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
+ testRunner.Given("a cargo size is 550 cubic feets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 21
+ testRunner.And("a vessel capacity is 120 cubic feets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.When("the application tries to book the cargo on vessel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+ testRunner.Then("the booking for the cargo on the vessel is rejected.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -2,9 +2,17 @@
 {
     public class CargoBookings
     {
-        public Booking Book(Cargo cargo)
+        private readonly IIntegerSequenceGenerator _integerSequenceGenerator;
+
+        public CargoBookings(IIntegerSequenceGenerator integerSequenceGenerator)
         {
-            throw new System.NotImplementedException();
+            _integerSequenceGenerator = integerSequenceGenerator;
+        }
+
+        public void BookCargoOnVessel(Cargo cargo, Vessel vessel)
+        {
+            vessel.Book(cargo,new ConfirmationNumber(_integerSequenceGenerator.GetNext()));
         }
     }
+
 }

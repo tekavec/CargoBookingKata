@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AD67D2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CargoBookingKata", "CargoBookingKata\CargoBookingKata.csproj", "{9868B3E6-5F88-4C8D-837E-21F32982F32C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CargoBookingKata.Tests", "CargoBookingKata.Tests\CargoBookingKata.Tests.csproj", "{C290ED48-F5E8-4B28-A8B4-84525241F62C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{9868B3E6-5F88-4C8D-837E-21F32982F32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9868B3E6-5F88-4C8D-837E-21F32982F32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9868B3E6-5F88-4C8D-837E-21F32982F32C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C290ED48-F5E8-4B28-A8B4-84525241F62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C290ED48-F5E8-4B28-A8B4-84525241F62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C290ED48-F5E8-4B28-A8B4-84525241F62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C290ED48-F5E8-4B28-A8B4-84525241F62C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
