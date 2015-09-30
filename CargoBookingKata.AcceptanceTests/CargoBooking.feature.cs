@@ -95,7 +95,7 @@ this.FeatureBackground();
 #line 15
  testRunner.And("the cargo is added to the vessel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.And("the vessel new capacity is 9250 cubic feets.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the vessel new capacity is 9250 cubic feets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -117,7 +117,12 @@ this.FeatureBackground();
 #line 22
  testRunner.When("the application tries to book the cargo on vessel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
- testRunner.Then("the booking for the cargo on the vessel is rejected.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the booking for the cargo on the vessel is rejected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
+ testRunner.And("the vessel new capacity is 120 cubic feets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("the message \"Cargo size exceeds vessel\'s available capacity.\" is displayed on the" +
+                    " BookingConsole.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

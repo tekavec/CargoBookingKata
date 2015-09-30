@@ -1,50 +1,37 @@
+using System.Collections.Generic;
+using System.Linq;
+using CargoBookingKata.Metrics;
+
 namespace CargoBookingKata
 {
     public class Vessel
     {
-        private readonly int _capacity;
+        private CubicFeet _capacity;
+        private readonly IList<Cargo.Cargo> _cargos = new List<Cargo.Cargo>();
 
-        public Vessel(int capacity)
+        public Vessel(CubicFeet capacity)
         {
             _capacity = capacity;
         }
 
-        public int AvailableCapacity()
+        public CubicFeet AvailableCapacity()
         {
-            return _capacity;
-        }
-
-        protected bool Equals(Vessel other)
-        {
-            return _capacity == other._capacity;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != GetType()) return false;
-            return Equals((Vessel) obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return _capacity;
-        }
-
-        public Booking FindBookingByConfirmationNumber(ConfirmationNumber confirmationNumber)
-        {
-            throw new System.NotImplementedException();
+            return _capacity - _cargos.Sum(a => a.Size());
         }
 
         public int CargosCount()
         {
-            throw new System.NotImplementedException();
+            return _cargos.Count;
         }
 
-        public void Book(Cargo cargo, ConfirmationNumber confirmationNumber)
+        public void Add(Cargo.Cargo cargo)
         {
-            throw new System.NotImplementedException();
+            if (_capacity < cargo.Size())
+            {
+                throw new CargoExceedesVesselCapacityException("Cargo size exceeds vessel's available capacity.");
+            }
+            _cargos.Add(cargo);
         }
     }
+
 }

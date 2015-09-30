@@ -41,13 +41,17 @@
   <ItemGroup>
     <Compile Include="Booking.cs" />
     <Compile Include="CargoRepository.cs" />
-    <Compile Include="Cargo.cs" />
     <Compile Include="CargoBookings.cs" />
     <Compile Include="CargoExceedesVesselCapacityException.cs" />
+    <Compile Include="Cargo\Cargo.cs" />
+    <Compile Include="Cargo\ICargoRepository.cs" />
     <Compile Include="ConfirmationNumber.cs" />
-    <Compile Include="ICargoRepository.cs" />
+    <Compile Include="IBookingConsole.cs" />
+    <Compile Include="IBookingRepository.cs" />
     <Compile Include="IIntegerSequenceGenerator.cs" />
     <Compile Include="IntegerSequenceGenerator.cs" />
+    <Compile Include="Metrics\CubicFeet.cs" />
+    <Compile Include="Metrics\CubicFeetExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vessel.cs" />
   </ItemGroup>

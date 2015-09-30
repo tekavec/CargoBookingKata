@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using CargoBookingKata.Metrics;
+using NUnit.Framework;
 
 namespace CargoBookingKata.Tests
 {
@@ -14,10 +15,10 @@ namespace CargoBookingKata.Tests
         }
 
         [Test]
-        public void AddABooking()
+        public void BookACargo()
         {
-            var cargo = new Cargo(400);
-            var vessel = new Vessel(200);
+            var cargo = new Cargo.Cargo(new CubicFeet(400));
+            var vessel = new Vessel(new CubicFeet(200));
             var confirmationNumber = new ConfirmationNumber(1);
             var booking = new Booking(cargo, vessel, confirmationNumber);
 
@@ -26,5 +27,6 @@ namespace CargoBookingKata.Tests
             Assert.That(_cargoRepository.Count(), Is.EqualTo(1));
             Assert.That(_cargoRepository.FindByConfirmationNumber(confirmationNumber), Is.EqualTo(booking));
         }
+
     }
 }

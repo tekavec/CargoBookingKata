@@ -13,11 +13,13 @@ Scenario:  Vessel should accept cargos only if there is capacity.
 	When the application tries to book the cargo on vessel
 	Then a new booking is created with the confirmation number 1
 	And the cargo is added to the vessel
-	And the vessel new capacity is 9250 cubic feets.
+	And the vessel new capacity is 9250 cubic feets
 
 @RejectCargo
 Scenario: Cargos should be rejected if the Vessel does not have enough capacity.
 	Given a cargo size is 550 cubic feets
 	And a vessel capacity is 120 cubic feets
 	When the application tries to book the cargo on vessel
-	Then the booking for the cargo on the vessel is rejected.
+	Then the booking for the cargo on the vessel is rejected
+	And the vessel new capacity is 120 cubic feets
+	And the message "Cargo size exceeds vessel's available capacity." is displayed on the BookingConsole.

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CargoBookingKata
+﻿namespace CargoBookingKata.Cargo
 {
     public interface ICargoRepository
     {
