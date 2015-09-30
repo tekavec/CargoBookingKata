@@ -1,5 +1,4 @@
-﻿using System;
-using CargoBookingKata.Bookings;
+﻿using CargoBookingKata.Bookings;
 using CargoBookingKata.Metrics;
 using CargoBookingKata.SequenceGeneration;
 using NSubstitute;
@@ -41,11 +40,8 @@ namespace CargoBookingKata.AcceptanceTests
         public void WhenTheApplicationTriesToBookTheCargoOnVessel()
         {
             _integerSequenceGenerator.GetNext().Returns(1);
-            //_cargoBookings.BookCargo(_cargo, _vessel);
 
-            Action bookingOperation = () => _cargoBookings.BookCargo(_cargo, _vessel);
-            bookingOperation();
-            //ScenarioContext.Current.Add("bookingOperation");
+            _cargoBookings.BookCargo(_cargo, _vessel);
         }
 
         [Then(@"a new booking is created with the confirmation number (.*)")]
@@ -72,8 +68,10 @@ namespace CargoBookingKata.AcceptanceTests
         [Then(@"the booking for the cargo on the vessel is rejected")]
         public void ThenTheBookingForTheCargoOnTheVesselIsRejected_()
         {
-            
-            //act.ShouldThrow<CargoExceedesVesselCapacityException>();
+            var confirmationNumber = new ConfirmationNumber(1);
+            var booking = new Booking(_cargo, _vessel, confirmationNumber);
+
+            _bookingRepository.DidNotReceive().Add(booking);
         }
 
         [Then(@"the message ""(.*)"" is displayed on the BookingConsole\.")]
