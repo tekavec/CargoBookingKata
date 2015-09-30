@@ -1,12 +1,12 @@
-﻿namespace CargoBookingKata
+﻿namespace CargoBookingKata.Bookings
 {
     public class Booking
     {
         private readonly Cargo.Cargo _cargo;
-        private readonly Vessel _vessel;
+        private readonly Vessel.Vessel _vessel;
         private readonly ConfirmationNumber _confirmationNumber;
 
-        public Booking(Cargo.Cargo cargo, Vessel vessel, ConfirmationNumber confirmationNumber)
+        public Booking(Cargo.Cargo cargo, Vessel.Vessel vessel, ConfirmationNumber confirmationNumber)
         {
             _cargo = cargo;
             _vessel = vessel;

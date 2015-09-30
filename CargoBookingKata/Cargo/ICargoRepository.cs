@@ -1,4 +1,6 @@
-﻿namespace CargoBookingKata.Cargo
+﻿using CargoBookingKata.Bookings;
+
+namespace CargoBookingKata.Cargo
 {
     public interface ICargoRepository
     {

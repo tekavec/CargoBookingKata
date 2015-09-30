@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using CargoBookingKata.Exceptions;
 using CargoBookingKata.Metrics;
 using NUnit.Framework;
 
@@ -7,14 +8,14 @@ namespace CargoBookingKata.Tests
     [TestFixture]
     public class VesselShould
     {
-        private Vessel _vessel;
+        private Vessel.Vessel _vessel;
         private Cargo.Cargo _smallCargo;
         private Cargo.Cargo _bigCargo;
 
         [SetUp]
         public void Init()
         {
-            _vessel = new Vessel(new CubicFeet(900));
+            _vessel = new Vessel.Vessel(new CubicFeet(900));
             _smallCargo = new Cargo.Cargo(new CubicFeet(200));
             _bigCargo = new Cargo.Cargo(new CubicFeet(1200));
         }

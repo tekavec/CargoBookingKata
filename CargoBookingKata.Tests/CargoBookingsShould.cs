@@ -1,4 +1,6 @@
-﻿using CargoBookingKata.Metrics;
+﻿using CargoBookingKata.Bookings;
+using CargoBookingKata.Metrics;
+using CargoBookingKata.SequenceGeneration;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -8,7 +10,7 @@ namespace CargoBookingKata.Tests
     public class CargoBookingsShould
     {
         private CargoBookings _cargoBookings;
-        private Vessel _vesselA;
+        private Vessel.Vessel _vesselA;
         private Cargo.Cargo _smallCargo;
         private Cargo.Cargo _bigCargo;
         private IIntegerSequenceGenerator _integerSequenceGenerator;
@@ -20,7 +22,7 @@ namespace CargoBookingKata.Tests
         {
             _integerSequenceGenerator=Substitute.For<IIntegerSequenceGenerator>();
             _cargoBookings = new CargoBookings(_integerSequenceGenerator, _bookingRepository, _console);
-            _vesselA = new Vessel(new CubicFeet(900));
+            _vesselA = new Vessel.Vessel(new CubicFeet(900));
             _smallCargo = new Cargo.Cargo(new CubicFeet(200));
             _bigCargo = new Cargo.Cargo(new CubicFeet(1200));
         }

@@ -1,4 +1,4 @@
-﻿namespace CargoBookingKata
+﻿namespace CargoBookingKata.Bookings
 {
     public class ConfirmationNumber
     {

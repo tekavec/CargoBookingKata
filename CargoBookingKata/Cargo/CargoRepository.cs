@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using CargoBookingKata.Cargo;
+using CargoBookingKata.Bookings;
 
-namespace CargoBookingKata
+namespace CargoBookingKata.Cargo
 {
     public class CargoRepository : ICargoRepository
     {

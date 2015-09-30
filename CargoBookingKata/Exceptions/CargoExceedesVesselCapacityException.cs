@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace CargoBookingKata
+namespace CargoBookingKata.Exceptions
 {
     [Serializable]
     public class CargoExceedesVesselCapacityException : Exception

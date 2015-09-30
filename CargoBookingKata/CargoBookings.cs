@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Runtime.Remoting.Messaging;
+using CargoBookingKata.Bookings;
+using CargoBookingKata.Exceptions;
+using CargoBookingKata.SequenceGeneration;
 
 namespace CargoBookingKata
 {
@@ -16,7 +19,7 @@ namespace CargoBookingKata
             _console = console;
         }
 
-        public void BookCargo(Cargo.Cargo cargo, Vessel vessel)
+        public void BookCargo(Cargo.Cargo cargo, Vessel.Vessel vessel)
         {
             try
             {

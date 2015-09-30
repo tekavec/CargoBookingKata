@@ -1,5 +1,7 @@
 ﻿using System;
+using CargoBookingKata.Bookings;
 using CargoBookingKata.Metrics;
+using CargoBookingKata.SequenceGeneration;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
@@ -11,7 +13,7 @@ namespace CargoBookingKata.AcceptanceTests
     public class CargoBookingsSteps
     {
         private Cargo.Cargo _cargo;
-        private Vessel _vessel;
+        private Vessel.Vessel _vessel;
         private CargoBookings _cargoBookings;
         private IIntegerSequenceGenerator _integerSequenceGenerator;
         private readonly IBookingRepository _bookingRepository = Substitute.For<IBookingRepository>();
@@ -33,7 +35,7 @@ namespace CargoBookingKata.AcceptanceTests
         [Given(@"a vessel capacity is (.*) cubic feets")]
         public void GivenAVesselCapacityIsCubicFeet(int capacity)
         {
-            _vessel = new Vessel(new CubicFeet(capacity));
+            _vessel = new Vessel.Vessel(new CubicFeet(capacity));
         }
 
         [When(@"the application tries to book the cargo on vessel")]

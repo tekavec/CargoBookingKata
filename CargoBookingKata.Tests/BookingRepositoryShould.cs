@@ -1,4 +1,6 @@
-﻿using CargoBookingKata.Metrics;
+﻿using CargoBookingKata.Bookings;
+using CargoBookingKata.Cargo;
+using CargoBookingKata.Metrics;
 using NUnit.Framework;
 
 namespace CargoBookingKata.Tests
@@ -18,7 +20,7 @@ namespace CargoBookingKata.Tests
         public void BookACargo()
         {
             var cargo = new Cargo.Cargo(new CubicFeet(400));
-            var vessel = new Vessel(new CubicFeet(200));
+            var vessel = new Vessel.Vessel(new CubicFeet(200));
             var confirmationNumber = new ConfirmationNumber(1);
             var booking = new Booking(cargo, vessel, confirmationNumber);
 

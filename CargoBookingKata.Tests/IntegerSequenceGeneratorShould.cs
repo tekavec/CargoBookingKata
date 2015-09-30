@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using CargoBookingKata.SequenceGeneration;
+using NUnit.Framework;
 
 namespace CargoBookingKata.Tests
 {

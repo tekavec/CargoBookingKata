@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using System.Linq;
+using CargoBookingKata.Exceptions;
 using CargoBookingKata.Metrics;
 
-namespace CargoBookingKata
+namespace CargoBookingKata.Vessel
 {
     public class Vessel
     {
-        private CubicFeet _capacity;
+        private readonly CubicFeet _capacity;
         private readonly IList<Cargo.Cargo> _cargos = new List<Cargo.Cargo>();
 
         public Vessel(CubicFeet capacity)

@@ -39,22 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Booking.cs" />
-    <Compile Include="CargoRepository.cs" />
+    <Compile Include="Bookings\Booking.cs" />
+    <Compile Include="Bookings\ConfirmationNumber.cs" />
+    <Compile Include="Bookings\IBookingRepository.cs" />
     <Compile Include="CargoBookings.cs" />
-    <Compile Include="CargoExceedesVesselCapacityException.cs" />
     <Compile Include="Cargo\Cargo.cs" />
+    <Compile Include="Cargo\CargoRepository.cs" />
     <Compile Include="Cargo\ICargoRepository.cs" />
-    <Compile Include="ConfirmationNumber.cs" />
+    <Compile Include="Exceptions\CargoExceedesVesselCapacityException.cs" />
     <Compile Include="IBookingConsole.cs" />
-    <Compile Include="IBookingRepository.cs" />
-    <Compile Include="IIntegerSequenceGenerator.cs" />
-    <Compile Include="IntegerSequenceGenerator.cs" />
     <Compile Include="Metrics\CubicFeet.cs" />
     <Compile Include="Metrics\CubicFeetExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vessel.cs" />
+    <Compile Include="SequenceGeneration\IIntegerSequenceGenerator.cs" />
+    <Compile Include="SequenceGeneration\IntegerSequenceGenerator.cs" />
+    <Compile Include="Vessel\Vessel.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

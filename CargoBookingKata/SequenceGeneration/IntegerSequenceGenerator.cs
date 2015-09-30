@@ -1,4 +1,4 @@
-﻿namespace CargoBookingKata
+﻿namespace CargoBookingKata.SequenceGeneration
 {
     public class IntegerSequenceGenerator : IIntegerSequenceGenerator
     {
