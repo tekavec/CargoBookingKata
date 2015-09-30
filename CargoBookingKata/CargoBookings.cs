@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.Remoting.Messaging;
-using CargoBookingKata.Bookings;
+﻿using CargoBookingKata.Bookings;
 using CargoBookingKata.Exceptions;
 using CargoBookingKata.SequenceGeneration;
 
@@ -35,7 +33,5 @@ namespace CargoBookingKata
                 _console.WriteLine(ex.Message);
             }
         }
-
     }
-
 }

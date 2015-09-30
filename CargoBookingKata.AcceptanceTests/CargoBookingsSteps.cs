@@ -2,7 +2,6 @@
 using CargoBookingKata.Bookings;
 using CargoBookingKata.Metrics;
 using CargoBookingKata.SequenceGeneration;
-using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
 using TechTalk.SpecFlow;

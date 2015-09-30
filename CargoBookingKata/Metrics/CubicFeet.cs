@@ -52,6 +52,4 @@
             return _value.ToString();
         }
     }
-
-
 }

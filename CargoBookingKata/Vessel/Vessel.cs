@@ -33,5 +33,4 @@ namespace CargoBookingKata.Vessel
             _cargos.Add(cargo);
         }
     }
-
 }

@@ -1,4 +1,5 @@
-﻿using CargoBookingKata.Metrics;
+﻿using System.Collections.Generic;
+using CargoBookingKata.Metrics;
 using NUnit.Framework;
 
 namespace CargoBookingKata.Tests
@@ -38,6 +39,13 @@ namespace CargoBookingKata.Tests
         {
             Assert.That(_smallCubicFeet.ToString(), Is.EqualTo("10"));
         }
-         
+
+        [Test]
+        public void PerformSumCalculation()
+        {
+            var cubicFeetList = new List<CubicFeet> {_smallCubicFeet, _hugeCubicFeet};
+
+            Assert.That(cubicFeetList.Sum(), Is.EqualTo(new CubicFeet(1010)));
+        }
     }
 }

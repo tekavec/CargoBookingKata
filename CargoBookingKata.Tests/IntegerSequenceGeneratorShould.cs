@@ -11,8 +11,8 @@ namespace CargoBookingKata.Tests
         {
             var integerSequenceGenerator = new IntegerSequenceGenerator();
 
-            Assert.That(1, Is.EqualTo(integerSequenceGenerator.GetNext()));
-            Assert.That(2, Is.EqualTo(integerSequenceGenerator.GetNext()));
+            Assert.That(integerSequenceGenerator.GetNext(), Is.EqualTo(1));
+            Assert.That(integerSequenceGenerator.GetNext(), Is.EqualTo(2));
         }
     }
 }
